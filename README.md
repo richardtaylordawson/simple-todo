@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://simple-todo.richarddawson.codes">
-    <img src="" alt="ToDo icon" width=72 height=72>
+    <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/gnome-todo-icon.png" alt="ToDo icon" width=72 height=72>
   </a>
 
   <h3 align="center">Simple ToDo</h3>
@@ -20,4 +20,4 @@
 [![GitHub Language Count](https://img.shields.io/github/languages/count/richardtaylordawson/simple-todo.svg)](https://github.com/richardtaylordawson/simple-todo/)
 
 ## View Project
-Not Available Yet
+<https://simple-todo.richarddawson.codes/>
