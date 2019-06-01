@@ -1,18 +1,27 @@
 {
   "name": "simple-todo",
+  "homepage": "https://simple-todo.richarddawson.codes",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
+    "@reach/router": "^1.2.1",
+    "firebase": "^6.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "0.9.x",
     "semantic-ui-react": "^0.87.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
