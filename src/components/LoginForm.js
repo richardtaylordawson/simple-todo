@@ -1,5 +1,6 @@
 import React, { useState, useContext, Fragment } from "react"
-import { Form, Button, Input, Message } from "semantic-ui-react"
+import { Form, Button, Input, Message, Icon } from "semantic-ui-react"
+import { Link } from "@reach/router"
 import styled from "@emotion/styled"
 
 import FirebaseContext from "./../firebase/Context"
@@ -9,6 +10,7 @@ const FormContainer = styled(Form)`
   border-radius: 4px;
   border: 1px solid #ddd;
   background-color: #fff;
+  box-shadow: 0 1px 2px #ccc;
 `
 
 const LoginForm = () => {
@@ -21,8 +23,7 @@ const LoginForm = () => {
   const handleSubmit = () => {
     setSubmittingForm(true)
 
-    Firebase
-      .doCreateUserWithEmailAndPassword(emailAddress, password)
+    Firebase.doSignInWithEmailAndPassword(emailAddress, password)
       .then(authUser => {
         setSubmittingForm(false)
         setErrorMessage({ display: false })
@@ -36,13 +37,12 @@ const LoginForm = () => {
 
   return (
     <Fragment>
-      <Message negative className={(errorMessage.display) ? "show" : "hidden"}>
-        <Message.Header>Error</Message.Header>
-        <p>{errorMessage.message}</p>
-      </Message>
-      <h2>Simple ToDo</h2>
-      <FormContainer onSubmit={handleSubmit}>
+      <FormContainer className={(submittingForm) ? "loading" : ""} onSubmit={handleSubmit}>
         <h2>Log In</h2>
+        <Message negative className={(errorMessage.display) ? "show" : "hidden"}>
+          <Message.Header>Error</Message.Header><Icon name="close" onClick={ () => { setErrorMessage({ "message": "", display: false }) } }/>
+          <p>{errorMessage.message}</p>
+        </Message>
         <Form.Field>
           <label>Email Address</label>
           <Input
@@ -63,8 +63,8 @@ const LoginForm = () => {
             onChange={e => setPassword(e.target.value)}
           />
         </Form.Field>
-        <Button type="submit" primary fluid className={(submittingForm) ? "loading" : ""}>Log In</Button>
-        <a>Forget Password?</a>
+        <Button type="submit" color="green" fluid className="mb-14">Log In</Button>
+        <Link to="/forgot">Forget Password?</Link>
       </FormContainer>
     </Fragment>
   )

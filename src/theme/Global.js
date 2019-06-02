@@ -1,24 +1,33 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
 
+import Colors from "./Colors"
+
 const GlobalTheme = () => (
   <Global
     styles={css`
-      @import url("https://fonts.googleapis.com/css?family=Maven+Pro");
-      @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
-
-      html {
-        font-family: "Source Sans Pro", sans-serif;
-        -ms-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-      }
-
       body {
-        background-color: #f0f0f0;
+        background-color: #f7f7f7;
+        padding-top: 60px;
       }
+
+      .d-inline { display: inline; }
 
       .show { display: block; }
       .hidden { display: none; }
+
+      .mb-0 { margin-bottom: 0 !important; }
+      .mb-14 { margin-bottom: 14px !important; }
+      .mb-45 { margin-bottom: 45px !important; }
+      .mt-45 { margin-top: 45px !important; }
+
+      ${Object.keys(Colors).map(key => {
+        return `
+          .text-${key} { color: ${Colors[key]} !important; }
+          .text-${key}::selection { color: ${Colors[key]} !important; }
+          .bg-${key} { background-color: ${Colors[key]} !important; }
+        `
+      })}
     `}
   />
 )

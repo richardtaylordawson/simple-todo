@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://simple-todo.richarddawson.codes">
-    <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-apps/256/gnome-todo-icon.png" alt="ToDo icon" width=72 height=72>
+    <img src="https://simple-todo.richarddawson.codes/favicon.ico" alt="ToDo icon" width=72 height=72>
   </a>
 
   <h3 align="center">Simple ToDo</h3>
