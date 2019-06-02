@@ -12,7 +12,7 @@ const SignOutButton = () => {
     setLoading(true)
     setTimeout(() => {
       Firebase.doSignOut()
-        .then(navigate("/"))
+        .then(navigate("/log-in"))
         .catch(error => console.error(error))
     }, 1000)
   }

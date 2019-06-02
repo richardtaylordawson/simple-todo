@@ -8,24 +8,24 @@ const FilterButtons = () => {
     <Button.Group size="tiny">
       <Button
         toggle
-        name="all"
-        onClick={e => setCurrentFilter(e.target.name)}
+        value="all"
+        onClick={e => setCurrentFilter(e.target.value)}
         active={currentFilter === "all"}
       >
         All
       </Button>
       <Button
         toggle
-        name="todo"
-        onClick={e => setCurrentFilter(e.target.name)}
+        value="todo"
+        onClick={e => setCurrentFilter(e.target.value)}
         active={currentFilter === "todo"}
       >
         ToDo
       </Button>
       <Button
         toggle
-        name="completed"
-        onClick={e => setCurrentFilter(e.target.name)}
+        value="completed"
+        onClick={e => setCurrentFilter(e.target.value)}
         active={currentFilter === "completed"}>
         Completed
       </Button>

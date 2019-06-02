@@ -1,31 +1,31 @@
 import React, { useState } from "react"
 import { Button } from "semantic-ui-react"
 
-const SizeButtons = () => {
+const SizeButtons = ({ className }) => {
   const [currentSize, setCurrentSize] = useState("m")
 
   return (
-    <Button.Group size="tiny">
+    <Button.Group size="tiny" className={className}>
       <Button
-        name="s"
         toggle
-        onClick={e => setCurrentSize(e.target.name)}
+        value="s"
+        onClick={e => setCurrentSize(e.target.value)}
         active={currentSize === "s"}
       >
         S
       </Button>
       <Button
-        name="m"
         toggle
-        onClick={e => setCurrentSize(e.target.name)}
+        value="m"
+        onClick={e => setCurrentSize(e.target.value)}
         active={currentSize === "m"}
       >
         M
       </Button>
       <Button
-        name="l"
         toggle
-        onClick={e => setCurrentSize(e.target.name)}
+        value="l"
+        onClick={e => setCurrentSize(e.target.value)}
         active={currentSize === "l"}
       >
         L

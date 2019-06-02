@@ -1,8 +1,7 @@
 import React from "react"
 import { Grid } from "semantic-ui-react"
 
-import { ToDoItemGroup, CreateToDoItem, InlineContainer, FilterButtons, SizeButtons, PullRight, Logo, SignOutButton } from "./../components"
-import ToDoItem from "../components/ToDoItem";
+import { TaskGroup, CreateTask, InlineContainer, FilterButtons, SizeButtons, PullRight, Logo, SignOutButton } from "./../components"
 
 const ToDo = () => {
   return (
@@ -15,16 +14,18 @@ const ToDo = () => {
           </PullRight>
         </InlineContainer>
 
-        <CreateToDoItem />
+        <CreateTask />
 
         <InlineContainer>
           <FilterButtons />
           <PullRight>
-            <SizeButtons />
+            <SizeButtons className="d-none-md-down" />
           </PullRight>
         </InlineContainer>
 
-        <ToDoItemGroup />
+        <TaskGroup>
+
+        </TaskGroup>
       </Grid.Column>
     </Grid>
   )

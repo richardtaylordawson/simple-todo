@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext, Fragment } from "react"
 import { Router, navigate } from "@reach/router"
 
 import FirebaseContext from "./firebase/Context"
-
 import GlobalTheme from "./theme/Global"
-import Home from "./pages/Home"
+import SignUp from "./pages/SignUp"
+import LogIn from "./pages/LogIn"
 import ToDo from "./pages/ToDo"
 
 const App = () => {
@@ -19,15 +19,16 @@ const App = () => {
     })
   })
 
-  authUser !== null
-    ? navigate("/todo")
-    : navigate("/")
+  if(authUser !== null) {
+    navigate("/todo")
+  }
 
   return (
     <Fragment>
       <GlobalTheme />
       <Router>
-        <Home path={process.env.PUBLIC_URL + '/'} />
+        <SignUp path={process.env.PUBLIC_URL + '/sign-up'} />
+        <LogIn default path={process.env.PUBLIC_URL + '/log-in'} />
         <ToDo path={process.env.PUBLIC_URL + '/todo'} />
       </Router>
     </Fragment>

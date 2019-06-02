@@ -1,6 +1,7 @@
 import React from "react"
 import { Global, css } from "@emotion/core"
 
+import Breakpoints from "./Breakpoints"
 import Colors from "./Colors"
 
 const GlobalTheme = () => (
@@ -9,9 +10,8 @@ const GlobalTheme = () => (
       body {
         background-color: #f7f7f7;
         padding-top: 60px;
+        margin: 0;
       }
-
-      .d-inline { display: inline; }
 
       .show { display: block; }
       .hidden { display: none; }
@@ -20,6 +20,17 @@ const GlobalTheme = () => (
       .mb-14 { margin-bottom: 14px !important; }
       .mb-45 { margin-bottom: 45px !important; }
       .mt-45 { margin-top: 45px !important; }
+
+      .italic {
+        color: #aaa;
+        font-style: italic;
+      }
+
+      .d-none-md-down {
+        ${Breakpoints["medium-down"]} {
+          display: none !important;
+        }
+      }
 
       ${Object.keys(Colors).map(key => {
         return `

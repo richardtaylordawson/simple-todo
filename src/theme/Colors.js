@@ -1,8 +1,8 @@
 const Colors = {
-  "purple": "#5c3dc1",
-  "teal": "#60bab2",
+  "dark-green": "#1a531b",
   "green": "#59b655",
-  "light-green": "#fdfff6"
+  "light-green": "#a3c293",
+  "lightest-green": "#fdfff6"
 }
 
 export default Colors

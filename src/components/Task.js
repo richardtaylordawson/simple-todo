@@ -1,7 +1,7 @@
 import React from "react"
 import { Segment, Checkbox } from "semantic-ui-react"
 
-const ToDoItem = () => {
+const Task = () => {
   return (
     <Segment compact className="bg-green">
       <Checkbox style={{display: "inline"}} />
@@ -10,4 +10,4 @@ const ToDoItem = () => {
   )
 }
 
-export default ToDoItem
+export default Task
