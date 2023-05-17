@@ -3,6 +3,7 @@ import { Router, navigate } from "@reach/router"
 
 import FirebaseContext from "./firebase/Context"
 import GlobalTheme from "./theme/Global"
+import Index from "./pages/Index"
 import SignUp from "./pages/SignUp"
 import LogIn from "./pages/LogIn"
 import ToDo from "./pages/ToDo"
@@ -27,6 +28,7 @@ const App = () => {
     <Fragment>
       <GlobalTheme />
       <Router>
+        <Index path={process.env.PUBLIC_URL + '/'} />
         <SignUp path={process.env.PUBLIC_URL + '/sign-up'} />
         <LogIn default path={process.env.PUBLIC_URL + '/log-in'} />
         <ToDo path={process.env.PUBLIC_URL + '/todo'} />
